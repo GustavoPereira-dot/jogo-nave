@@ -2,18 +2,34 @@ using UnityEngine;
 
 public class meteoro : MonoBehaviour
 {
-    public float minsize = 0f;
-    public float maxsize = 3f;
-    public Rigidbody rb;
-    public float Minspeed = 1f;
-    public float Maxspeed = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float minsize = 0.5f;
+    public float maxsize = 2f;
+    public Rigidbody2D rb;
+    public float minSpeed = 10f;
+    public float maxSpeed = 30f;
+    public float minTorque = -40f; 
+    public float maxTorque = 40f;
+    private Vector2 RandomSpeed;
     void Start()
     {
-        float randomSize = Random.Range(minsize, maxsize);
-        transform.localScale = new Vector3(randomSize, randomSize, randomSize);
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(Random.onUnitSphere * Random.Range(Minspeed, Maxspeed), ForceMode.Impulse);
+        float radomSize = Random.Range(minsize, maxsize);
+
+        float Randomspeed = Random.Range(minSpeed, maxSpeed);
+
+        float randomtorque = Random.Range(minTorque, maxTorque);
+
+        Vector2 RandomDirection = Random.insideUnitCircle.normalized;
+
+        transform.localScale = new Vector3(radomSize, radomSize, 1);
+
+        transform.localRotation = Quaternion.Euler(1, 1, randomtorque);
+
+        rb = GetComponent<Rigidbody2D>();
+
+        rb.AddForce(RandomDirection * RandomSpeed);
+
+        rb.AddTorque(randomtorque);
     }
 
     // Update is called once per frame
