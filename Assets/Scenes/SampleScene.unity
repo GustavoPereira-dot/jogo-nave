@@ -905,6 +905,7 @@ GameObject:
   - component: {fileID: 1890140622}
   - component: {fileID: 1890140626}
   - component: {fileID: 1890140625}
+  - component: {fileID: 1890140627}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1070,8 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::nave
   animator: {fileID: 0}
-  rb: {fileID: 0}
-  thrustforce: 1
+  thrustforce: 150
 --- !u!95 &1890140626
 Animator:
   serializedVersion: 7
@@ -1094,6 +1094,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &1890140627
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890140621}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2550742829559054370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1148,7 +1175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167072441215774789, guid: 38ab1443dcdc0bb4c88a39cd75dc9cfc, type: 3}
       propertyPath: maxSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8167072441215774789, guid: 38ab1443dcdc0bb4c88a39cd75dc9cfc, type: 3}
       propertyPath: minSpeed
@@ -1177,7 +1204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3336366422307482320, guid: 42e10470d55d2da4bbf62438fcfe6d5b, type: 3}
       propertyPath: maxSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3336366422307482320, guid: 42e10470d55d2da4bbf62438fcfe6d5b, type: 3}
       propertyPath: minSpeed
@@ -1290,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2585008986714945712, guid: 46b16753ed823fe4daf1d41151109947, type: 3}
       propertyPath: maxSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2585008986714945712, guid: 46b16753ed823fe4daf1d41151109947, type: 3}
       propertyPath: minSpeed
@@ -1367,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578870684126139349, guid: 481b8da636c4c11409b58f6455adfeb4, type: 3}
       propertyPath: maxSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7578870684126139349, guid: 481b8da636c4c11409b58f6455adfeb4, type: 3}
       propertyPath: minSpeed
@@ -1400,7 +1427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5201645060084380120, guid: 16de83394d336554d8cbdab111c77192, type: 3}
       propertyPath: maxSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5201645060084380120, guid: 16de83394d336554d8cbdab111c77192, type: 3}
       propertyPath: minSpeed
