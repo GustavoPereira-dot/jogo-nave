@@ -9,7 +9,7 @@ public class nave : MonoBehaviour
     public UIDocument uiDocument;
     private Label scoretext;
 
-    public float thrustforce = 1f;
+    public float thrustforce = 10f;
 
     private float elapsedTime = 0f;
     private float score = 0f;

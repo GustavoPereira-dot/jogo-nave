@@ -11,6 +11,8 @@ public class meteoro : MonoBehaviour
     public float minTorque = -40f; 
     public float maxTorque = 40f;
     private Vector2 RandomSpeed;
+    public float thrustforce = 10f;
+
     void Start()
     {
         float radomSize = Random.Range(minsize, maxsize);
@@ -30,6 +32,10 @@ public class meteoro : MonoBehaviour
         rb.AddForce(RandomDirection * RandomSpeed);
 
         rb.AddTorque(randomtorque);
+
+        Vector2 randomDirection = Random.insideUnitCircle.normalized;
+        rb.AddForce(randomDirection * thrustforce, ForceMode2D.Impulse);
+
     }
 
     // Update is called once per frame
